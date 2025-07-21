@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+    Configuración de Logback para Spring Boot
+    Logback es la implementación de logging utilizada por defecto en Spring Boot
+-->
 <configuration>
+    <!-- 
+        Appender para la consola (STDOUT)
+        Muestra los logs en la consola con un formato específico
+    -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
+            <!-- 
+                Patrón de formato para los logs:
+                [%thread]: Nombre del hilo
+                %-5level: Nivel de log (ERROR, WARN, INFO, DEBUG, TRACE)
+                %logger: Nombre de la clase que genera el log
+                %msg: Mensaje de log
+                %n: Salto de línea
+            -->
             <pattern>[%thread] %-5level: %logger - %msg%n</pattern>
         </encoder>
     </appender>
 
+    <!-- 
+        Configuración del nivel de log raíz (root)
+        Nivel "info": muestra logs de nivel INFO y superiores (WARN, ERROR)
+    -->
     <root level="info">
         <appender-ref ref="STDOUT"/>
     </root>
