@@ -1,6 +1,55 @@
-# Getting Started with Create React App
+# Sistema de Recursos Humanos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto es una aplicación full-stack para la gestión de empleados, desarrollada con React en el frontend y Spring Boot en el backend.
+
+## Descripción
+
+El Sistema de Recursos Humanos permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre los empleados de una organización. La aplicación consta de:
+
+- **Frontend**: Desarrollado con React, Bootstrap y Axios para las peticiones HTTP
+- **Backend**: Desarrollado con Spring Boot, Spring Data JPA y MySQL
+
+## Estructura del Proyecto
+
+### Frontend (React)
+
+- **src/empleados/**: Componentes para la gestión de empleados
+  - `ListadoEmpleados.js`: Muestra la lista de empleados y permite eliminarlos
+  - `AgregarEmpleado.js`: Formulario para crear nuevos empleados
+  - `EditarEmpleado.js`: Formulario para actualizar empleados existentes
+- **src/plantilla/**: Componentes de estructura
+  - `Navegacion.js`: Barra de navegación de la aplicación
+- **src/App.js**: Componente principal con las rutas de la aplicación
+
+### Backend (Spring Boot)
+
+- **modelo/**: Entidades JPA
+  - `Empleado.java`: Entidad que representa a un empleado
+- **repositorio/**: Interfaces de acceso a datos
+  - `EmpleadoRepositorio.java`: Repositorio para operaciones CRUD
+- **servicio/**: Lógica de negocio
+  - `IEmpleadoServicio.java`: Interfaz con operaciones de servicio
+  - `EmpleadoServicio.java`: Implementación de la interfaz
+- **controlador/**: Endpoints REST
+  - `EmpleadoControlador.java`: Controlador REST para empleados
+- **excepcion/**: Manejo de excepciones
+  - `RecursoNoEncontradoExcepcion.java`: Excepción para recursos no encontrados
+
+## Requisitos
+
+- Node.js y npm para el frontend
+- Java 17+ y Maven para el backend
+- MySQL Server
+
+## Configuración
+
+1. Crear una base de datos MySQL llamada `recursos_humanos_db` o configurar el archivo `application.properties`
+2. Ejecutar el backend Spring Boot
+3. Ejecutar el frontend React con `npm start`
+
+---
+
+# Instrucciones de React
 
 ## Available Scripts
 
